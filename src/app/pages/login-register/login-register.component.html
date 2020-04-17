@@ -30,7 +30,7 @@
               </div>
   
               <div class="text-center pt-4">
-
+                <!--
                 <h5>One way binding</h5>
                 <p>
                 {{ 2+3 }}
@@ -39,6 +39,7 @@
                 </p>
                 <h5>Two way binding</h5>
                 <p>{{ userData | json }} </p>
+                -->
                 <button type="button" class="btn btn-primary" (click)="submitLogin()">Login</button>
               </div>
             </form>
@@ -71,6 +72,23 @@
       </div>
       <div class="text-center pb-4">
         <i class="fas fa-arrow-left"></i> <a routerLink=""> Back to Home</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Login Status</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {{ msg_login }} 
+        </div>
       </div>
     </div>
   </div>

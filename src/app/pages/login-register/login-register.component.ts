@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+declare var $: any;
 
 @Component({
   selector: 'app-login-register',
@@ -11,6 +12,7 @@ export class LoginRegisterComponent implements OnInit {
 
   // ตัวแปร
   message:string = "Hello Angular";
+  msg_login:string = "";
 
   // ตัวแปร object
   profile = {
@@ -38,7 +40,9 @@ export class LoginRegisterComponent implements OnInit {
       // alert("Login Success");
       this.router.navigate(['backend']);
     }else{
-      alert("Login Fail!!!");
+      // alert("Login Fail!!!");
+      this.msg_login = "ข้อมูลเข้าระบบไม่ถูกต้องลองใหม่";
+      $("#myModal").modal('show');
     }
   }
 

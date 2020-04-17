@@ -10,7 +10,8 @@ import { ProductModel } from '../models/product.model';
 export class ProductService {
 
    // API URL
-   apiURL = "https://www.itgenius.co.th/sandbox_api/ministockapi/public/api/";
+  apiURL = "https://www.itgenius.co.th/sandbox_api/ministockapi/public/api/";
+
 
   constructor(private http: HttpClient) { }
 
