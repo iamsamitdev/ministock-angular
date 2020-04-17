@@ -15,9 +15,14 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.api.getProducts().subscribe((data: {}) => {
-      console.log(data);
+      // console.log(data);
       this.dataProduct = data;
     })
+  }
+
+
+  viewProduct(id){
+    alert(id)
   }
 
 }
