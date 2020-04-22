@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductService } from '../../services/product.service';
 
 declare var $: any;
 
@@ -27,7 +28,14 @@ export class LoginRegisterComponent implements OnInit {
     "password":""
   }
 
-  constructor(private router: Router) { }
+
+  // Test data
+  productData = {
+    "name":"Samit Koyom",
+    "email":"samit@gmail.com"
+  }
+
+  constructor(private router: Router, public api: ProductService) { }
 
   ngOnInit(): void {
     
@@ -44,6 +52,19 @@ export class LoginRegisterComponent implements OnInit {
       this.msg_login = "ข้อมูลเข้าระบบไม่ถูกต้องลองใหม่";
       $("#myModal").modal('show');
     }
+  }
+
+  submitGET(){
+    this.api.getMethod().subscribe((data: {}) => {
+      console.log(data);
+    });
+  }
+
+  submitPOST(){
+    this.api.postMethod(this.productData).subscribe((data: {}) => {
+      console.log(data);
+    });
+    
   }
 
 }
