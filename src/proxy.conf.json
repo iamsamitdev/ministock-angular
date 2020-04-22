@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://www.itgenius.co.th",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": "/sandbox_api/ministockapi/public/api/products"
+    },
+ "changeOrigin": true
+  }
+}

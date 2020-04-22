@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-login-register',
@@ -25,7 +25,14 @@ export class LoginRegisterComponent implements OnInit {
     "password":""
   }
 
-  constructor(private router: Router) { }
+
+  // Test data
+  productData = {
+    "name":"Samit Koyom",
+    "email":"samit@gmail.com"
+  }
+
+  constructor(private router: Router, public api: ProductService) { }
 
   ngOnInit(): void {
     
@@ -40,6 +47,19 @@ export class LoginRegisterComponent implements OnInit {
     }else{
       alert("Login Fail!!!");
     }
+  }
+
+  submitGET(){
+    this.api.getMethod().subscribe((data: {}) => {
+      console.log(data);
+    });
+  }
+
+  submitPOST(){
+    this.api.postMethod(this.productData).subscribe((data: {}) => {
+      console.log(data);
+    });
+    
   }
 
 }
